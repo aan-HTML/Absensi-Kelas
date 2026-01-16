@@ -1,54 +1,78 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import type { User } from './types';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+import type { ClassSession } from './types';
+import { ThemeProvider } from './context/ThemeContext';
+import AdminSetup from './components/AdminSetup';
+import AttendanceBoard from './components/AttendanceBoard';
 import Spinner from './components/common/Spinner';
 
-const App: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+const AppContent: React.FC = () => {
+  const [classSession, setClassSession] = useState<ClassSession>({});
+  const [isAdmin, setIsAdmin] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     try {
-      const storedUser = localStorage.getItem('attendance_user');
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
+      const stored = localStorage.getItem('class_session');
+      if (stored) {
+        setClassSession(JSON.parse(stored));
       }
     } catch (error) {
-      console.error("Failed to parse user from localStorage", error);
+      console.error("Failed to parse class session", error);
     } finally {
       setIsLoading(false);
     }
   }, []);
 
-  const handleLogin = useCallback((username: string): void => {
-    const loggedInUser: User = { id: username.toLowerCase(), name: username };
-    localStorage.setItem('attendance_user', JSON.stringify(loggedInUser));
-    setUser(loggedInUser);
-  }, []);
-
-  const handleLogout = useCallback((): void => {
-    localStorage.removeItem('attendance_user');
-    setUser(null);
+  const saveClassSession = useCallback((data: ClassSession) => {
+    setClassSession(data);
+    localStorage.setItem('class_session', JSON.stringify(data));
   }, []);
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-slate-100">
+      <div className="flex items-center justify-center min-h-screen bg-white dark:bg-gray-900">
         <Spinner />
       </div>
     );
   }
 
+  const today = new Date().toISOString().split('T')[0];
+  const hasSession = classSession[today];
+
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800">
-      {user ? (
-        <Dashboard user={user} onLogout={handleLogout} />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      {!hasSession ? (
+        <AdminSetup 
+          onSetup={(data) => {
+            saveClassSession({ ...classSession, [today]: data });
+            setIsAdmin(false);
+          }}
+        />
       ) : (
-        <Login onLogin={handleLogin} />
+        <AttendanceBoard 
+          classData={classSession[today]}
+          onUpdateAttendance={(updated) => {
+            saveClassSession({
+              ...classSession,
+              [today]: updated
+            });
+          }}
+          onReset={() => {
+            const newSession = { ...classSession };
+            delete newSession[today];
+            saveClassSession(newSession);
+          }}
+        />
       )}
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 
