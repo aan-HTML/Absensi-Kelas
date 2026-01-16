@@ -16,7 +16,7 @@ Proyek ini bebas digunakan untuk pembelajaran dan pengembangan lebih lanjut.
 Jika kamu tertarik untuk berdiskusi atau mengembangkan proyek ini bersama:
 
 - Email: `kmsmalqodri@gmail.com
-- GitHub: [@usernamekamu](https://github.com/Al-Qodri)
+- GitHub: [@usernamekamu](https://github.com/aan-HTML)
 
 ---
 
