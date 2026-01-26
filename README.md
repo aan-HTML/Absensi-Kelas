@@ -29,10 +29,10 @@ Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lai
 
 ## 🛠️ Teknologi yang Digunakan
 
-* **Frontend**: HTML, CSS, JavaScript
+* **Frontend**: HTML, TailwindCSS, TypeScript
 * **Backend**: PHP / Node.js *(opsional sesuai implementasi)*
 * **Database**: MySQL
-* **Web Server**: Apache / XAMPP
+* **Web Server**: Apache / XAMPP / Laragon
 
 ---
 
@@ -41,11 +41,12 @@ Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lai
 1. Clone repository ini
 
    ```bash
-   git clone https://github.com/username/nama-repo.git
+   git clone https://github.com/aan-HTML/Absensi-Kelas.git
    ```
-2. Pindahkan folder ke direktori server lokal (htdocs jika menggunakan XAMPP)
-3. Import database ke MySQL
-4. Jalankan server dan buka di browser
+2. install "npm install" di terminal
+3. Setelah itu tulis "npm run dev" dan copy link http://localhost:5173/
+4. Jalankan server di browser
+5. Jika kalian ingin menambahkan data base bisa menggunakan XAMMP atau Laragon
 
    ```
    http://localhost/nama-folder
