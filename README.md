@@ -1,6 +1,6 @@
-# 📚 Sistem Absensi Kelas Online Berbasis Website
+# 📚 Sistem Absensi
 
-## 📝 Deskripsi Proyek
+## Deskripsi Proyek
 
 Sistem Absensi Kelas Online adalah sebuah aplikasi berbasis website yang dirancang untuk mempermudah proses pencatatan kehadiran siswa atau mahasiswa secara digital. Proyek ini menggantikan sistem absensi manual dengan solusi yang lebih efisien, akurat, dan mudah diakses kapan saja dan di mana saja.
 
@@ -8,7 +8,7 @@ Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lai
 
 ---
 
-## 🎯 Tujuan Proyek
+## Tujuan Proyek
 
 * Mempermudah proses absensi kelas secara online
 * Mengurangi kesalahan pencatatan absensi manual
@@ -17,7 +17,7 @@ Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lai
 
 ---
 
-## ⚙️ Fitur Utama
+## Fitur Utama
 
 * 🔐 Login pengguna (admin/guru/siswa)
 * 🧑‍🏫 Manajemen data siswa dan kelas
@@ -27,7 +27,7 @@ Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lai
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 * **Frontend**: HTML, TailwindCSS, TypeScript
 * **Backend**: PHP / Node.js *(opsional sesuai implementasi)*
@@ -36,7 +36,7 @@ Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lai
 
 ---
 
-## 🚀 Cara Menjalankan Proyek
+## Cara Menjalankan Proyek
 
 1. Clone repository ini
 
