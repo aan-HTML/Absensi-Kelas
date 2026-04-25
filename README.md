@@ -1,8 +1,8 @@
-# 📚 Sistem Absensi
+# SmartAsensi
 
 ## Deskripsi Proyek
 
-Sistem Absensi Kelas Online adalah sebuah aplikasi berbasis website yang dirancang untuk mempermudah proses pencatatan kehadiran siswa atau mahasiswa secara digital. Proyek ini menggantikan sistem absensi manual dengan solusi yang lebih efisien, akurat, dan mudah diakses kapan saja dan di mana saja.
+SmartAbsensi adalah sebuah aplikasi berbasis website yang dirancang untuk mempermudah proses pencatatan kehadiran siswa atau mahasiswa secara digital. Proyek ini menggantikan sistem absensi manual dengan solusi yang lebih efisien, akurat, dan mudah diakses kapan saja dan di mana saja.
 
 Aplikasi ini cocok digunakan oleh sekolah, kampus, maupun lembaga pendidikan lainnya untuk memantau kehadiran peserta didik secara real-time.
 
